@@ -1,1 +1,7 @@
 qemu-system-i386 -fda Main/build/main_floppy.img
+
+nasm Main/src/main.asm -f bin -o Main/build/main.bin
+
+cp Main/build/main.bin Main/build/main_floppy.img
+
+truncate -s 1440k Main/build/main_floppy.img
